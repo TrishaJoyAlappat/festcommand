@@ -1,0 +1,485 @@
+/* =========================================================
+   FESTCOMMAND — EDITORIAL FESTIVAL THEME
+   Google Fonts + Tailwind v4 + Animations
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================
+   FESTIVAL PALETTE — ROOT VARIABLES (always-light)
+   ========================================================= */
+:root {
+  --background:        #FAFAF7;
+  --foreground:        #1C1A14;
+  --card:              #FFFFFF;
+  --card-foreground:   #1C1A14;
+  --popover:           #FFFFFF;
+  --popover-foreground:#1C1A14;
+  --primary:           #F5E642;
+  --primary-foreground:#1C1A14;
+  --secondary:         #FFFFFF;
+  --secondary-foreground:#1C1A14;
+  --muted:             #F5F2EC;
+  --muted-foreground:  #6B6352;
+  --accent:            #2D1B4E;
+  --accent-foreground: #FFFFFF;
+  --border:            #D9D3C8;
+  --input:             #FFFFFF;
+  --ring:              #1C1A14;
+  --destructive:       #FF5C3A;
+  --destructive-foreground:#FFFFFF;
+  --radius:            0px;
+  
+  --sidebar:                   #F5F2EC;
+  --sidebar-foreground:        #6B6352;
+  --sidebar-primary:           #1C1A14;
+  --sidebar-primary-foreground:#F5E642;
+  --sidebar-accent:            #1C1A14;
+  --sidebar-accent-foreground: #F5E642;
+  --sidebar-border:            #D9D3C8;
+  --sidebar-ring:              #1C1A14;
+  
+  /* Badge Colors */
+  --tech:    #0D9488;
+  --sports:  #4A7C59;
+  --cultural:#C2410C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background:        #FAFAF7;
+    --foreground:        #1C1A14;
+    --card:              #FFFFFF;
+    --card-foreground:   #1C1A14;
+    --popover:           #FFFFFF;
+    --popover-foreground:#1C1A14;
+    --primary:           #F5E642;
+    --primary-foreground:#1C1A14;
+    --secondary:         #FFFFFF;
+    --secondary-foreground:#1C1A14;
+    --muted:             #F5F2EC;
+    --muted-foreground:  #6B6352;
+    --accent:            #2D1B4E;
+    --accent-foreground: #FFFFFF;
+    --border:            #D9D3C8;
+    --input:             #FFFFFF;
+    --ring:              #1C1A14;
+    --destructive:       #FF5C3A;
+    --destructive-foreground:#FFFFFF;
+    --radius:            0px;
+    --sidebar:                   #F5F2EC;
+    --sidebar-foreground:        #6B6352;
+    --sidebar-primary:           #1C1A14;
+    --sidebar-primary-foreground:#F5E642;
+    --sidebar-accent:            #1C1A14;
+    --sidebar-accent-foreground: #F5E642;
+    --sidebar-border:            #D9D3C8;
+    --sidebar-ring:              #1C1A14;
+    --tech:    #0D9488;
+    --sports:  #4A7C59;
+    --cultural:#C2410C;
+  }
+}
+
+.dark {
+  --background:        #FAFAF7;
+  --foreground:        #1C1A14;
+  --card:              #FFFFFF;
+  --card-foreground:   #1C1A14;
+  --popover:           #FFFFFF;
+  --popover-foreground:#1C1A14;
+  --primary:           #F5E642;
+  --primary-foreground:#1C1A14;
+  --secondary:         #FFFFFF;
+  --secondary-foreground:#1C1A14;
+  --muted:             #F5F2EC;
+  --muted-foreground:  #6B6352;
+  --accent:            #2D1B4E;
+  --accent-foreground: #FFFFFF;
+  --border:            #D9D3C8;
+  --input:             #FFFFFF;
+  --ring:              #1C1A14;
+  --destructive:       #FF5C3A;
+  --destructive-foreground:#FFFFFF;
+  --sidebar:                   #F5F2EC;
+  --sidebar-foreground:        #6B6352;
+  --sidebar-primary:           #1C1A14;
+  --sidebar-primary-foreground:#F5E642;
+  --sidebar-accent:            #1C1A14;
+  --sidebar-accent-foreground: #F5E642;
+  --sidebar-border:            #D9D3C8;
+  --sidebar-ring:              #1C1A14;
+  --tech:    #0D9488;
+  --sports:  #4A7C59;
+  --cultural:#C2410C;
+}
+
+/* =========================================================
+   TAILWIND v4 THEME MAPPING
+   ========================================================= */
+@theme inline {
+  --font-sans:    'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Anton', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+
+  --color-background:             var(--background);
+  --color-foreground:             var(--foreground);
+  --color-card:                   var(--card);
+  --color-card-foreground:        var(--card-foreground);
+  --color-popover:                var(--popover);
+  --color-popover-foreground:     var(--popover-foreground);
+  --color-primary:                var(--primary);
+  --color-primary-foreground:     var(--primary-foreground);
+  --color-secondary:              var(--secondary);
+  --color-secondary-foreground:   var(--secondary-foreground);
+  --color-muted:                  var(--muted);
+  --color-muted-foreground:       var(--muted-foreground);
+  --color-accent:                 var(--accent);
+  --color-accent-foreground:      var(--accent-foreground);
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:                 var(--border);
+  --color-input:                  var(--input);
+  --color-ring:                   var(--ring);
+  --color-sidebar:                      var(--sidebar);
+  --color-sidebar-foreground:           var(--sidebar-foreground);
+  --color-sidebar-primary:              var(--sidebar-primary);
+  --color-sidebar-primary-foreground:   var(--sidebar-primary-foreground);
+  --color-sidebar-accent:               var(--sidebar-accent);
+  --color-sidebar-accent-foreground:    var(--sidebar-accent-foreground);
+  --color-sidebar-border:               var(--sidebar-border);
+  --color-sidebar-ring:                 var(--sidebar-ring);
+  --color-tech:     var(--tech);
+  --color-sports:   var(--sports);
+  --color-cultural: var(--cultural);
+
+  --radius-sm:  0px;
+  --radius-md:  0px;
+  --radius-lg:  0px;
+  --radius-xl:  0px;
+}
+
+/* =========================================================
+   BASE LAYER
+   ========================================================= */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: -0.01em;
+    color: #1C1A14;
+    text-transform: uppercase;
+  }
+
+  h2, h3, h4 {
+    font-family: 'Anton', sans-serif;
+    color: #2D1B4E;
+  }
+
+  h2 { font-size: 28px; }
+  h3 { font-size: 24px; }
+}
+
+/* =========================================================
+   BACKGROUND DECORATION (Dot Grid + Noise)
+   ========================================================= */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, #D9D3C8 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+   ========================================================= */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+@keyframes statCounter {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================================
+   PAGE ANIMATIONS
+   ========================================================= */
+.page-animate {
+  animation: fadeSlideUp 0.35s ease-out both;
+}
+
+/* =========================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================= */
+.font-anton { font-family: 'Anton', sans-serif !important; }
+.font-sans  { font-family: 'DM Sans', sans-serif !important; }
+.font-mono  { font-family: 'DM Mono', monospace !important; }
+
+/* =========================================================
+   BUTTON STYLES
+   ========================================================= */
+button[class*="btn-primary"], 
+.btn-primary {
+  background: #F5E642 !important;
+  color: #1C1A14 !important;
+  font-weight: 700 !important;
+  border: 2px solid #1C1A14 !important;
+  border-radius: 4px !important;
+  transition: all 0.18s ease !important;
+}
+button[class*="btn-primary"]:hover,
+.btn-primary:hover {
+  background: #1C1A14 !important;
+  color: #F5E642 !important;
+}
+
+button[class*="btn-secondary"],
+.btn-secondary {
+  background: transparent !important;
+  border: 2px solid #1C1A14 !important;
+  color: #1C1A14 !important;
+  border-radius: 4px !important;
+  transition: all 0.18s ease !important;
+}
+button[class*="btn-secondary"]:hover,
+.btn-secondary:hover {
+  background: #1C1A14 !important;
+  color: #FFFFFF !important;
+}
+
+button[class*="btn-danger"],
+.btn-danger {
+  background: transparent !important;
+  border: 2px solid #FF5C3A !important;
+  color: #FF5C3A !important;
+  border-radius: 4px !important;
+  transition: all 0.18s ease !important;
+}
+button[class*="btn-danger"]:hover,
+.btn-danger:hover {
+  background: #FF5C3A !important;
+  color: #FFFFFF !important;
+}
+
+/* =========================================================
+   EVENT CARDS
+   ========================================================= */
+.event-card {
+  border: 2px solid #1C1A14 !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0 #1C1A14 !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+  background: #FFFFFF !important;
+  overflow: hidden;
+}
+.event-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0 #1C1A14 !important;
+}
+
+.event-card-img-wrap {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #1C1A14;
+}
+.event-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 0px;
+  color: #FFFFFF;
+}
+.event-card-time-chip {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #1C1A14;
+  color: #FFFFFF;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-top-left-radius: 8px; /* Slight cutout look */
+  border-top: 2px solid #1C1A14;
+  border-left: 2px solid #1C1A14;
+}
+
+/* =========================================================
+   BADGES (Tech, Sports, Cultural, Status)
+   ========================================================= */
+.badge-tech { background-color: #0D9488 !important; color: #FFFFFF !important; }
+.badge-sports { background-color: #4A7C59 !important; color: #FFFFFF !important; }
+.badge-cultural { background-color: #C2410C !important; color: #FFFFFF !important; }
+
+.badge-live { background-color: #4A7C59 !important; color: #FFFFFF !important; }
+.badge-pending { background-color: #EDE8DF !important; color: #6B6352 !important; }
+.badge-draft { background-color: #F5F2EC !important; color: #A89F8C !important; }
+
+.badge-1st { background-color: #F5E642 !important; color: #1C1A14 !important; }
+.badge-2nd { background-color: #D9D3C8 !important; color: #1C1A14 !important; }
+.badge-participant { background-color: #EDE8DF !important; color: #6B6352 !important; }
+
+/* In-progress animated dot */
+.in-progress-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #4A7C59 !important;
+  color: #FFFFFF !important;
+  font-family: 'DM Mono', monospace;
+  border-radius: 0 !important;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.in-progress-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  animation: pulseDot 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+.editorial-table {
+  border: 2px solid #1C1A14;
+  border-radius: 0;
+  width: 100%;
+}
+.editorial-table thead tr {
+  background: #1C1A14 !important;
+}
+.editorial-table thead th {
+  color: #F5E642 !important;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-bottom: 2px solid #1C1A14;
+}
+.editorial-table tbody tr {
+  transition: background 0.15s ease;
+}
+.editorial-table tbody tr:nth-child(odd) {
+  background: #FFFFFF !important;
+}
+.editorial-table tbody tr:nth-child(even) {
+  background: #F5F2EC !important;
+}
+.editorial-table tbody tr:hover {
+  background: #FEF3C7 !important;
+}
+.editorial-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #D9D3C8;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Scoring Table Override */
+.scoring-table thead tr {
+  background: #2D1B4E !important;
+}
+.scoring-table thead th {
+  color: #FFFFFF !important;
+}
+
+/* =========================================================
+   INPUTS & FORMS
+   ========================================================= */
+input, textarea, select {
+  border-radius: 0px !important;
+  border: 2px solid #1C1A14 !important;
+  background: #FFFFFF !important;
+  font-family: 'DM Sans', sans-serif;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #F5E642 !important;
+  outline: 3px solid rgba(245, 230, 66, 0.4) !important;
+  outline-offset: 0px;
+}
+
+/* Search specific */
+input[type="search"], input[placeholder*="Search"] {
+  width: 100%;
+  padding: 10px 16px;
+}
+
+/* =========================================================
+   SECTION DIVIDERS
+   ========================================================= */
+hr {
+  border-color: #1C1A14 !important;
+  border-top-width: 2px !important;
+}
+
+/* =========================================================
+   GLOBAL OVERRIDES FOR RADIX / UI COMPONENTS
+   ========================================================= */
+[data-slot="card"] {
+  border-radius: 0px !important;
+  border: 2px solid #1C1A14 !important;
+  box-shadow: 4px 4px 0 #1C1A14 !important;
+}
+
+/* Toaster */
+[data-sonner-toaster] [data-sonner-toast] {
+  border-radius: 0px !important;
+  border: 2px solid #1C1A14 !important;
+  background: #FFFFFF !important;
+  box-shadow: 4px 4px 0 #1C1A14 !important;
+}
